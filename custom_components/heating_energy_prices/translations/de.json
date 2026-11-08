@@ -1,0 +1,190 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Heizenergiepreise",
+        "description": "Brennstoffpreise anderer Heizsysteme als Sensoren, z. B. für den Kostenvergleich im Wärmepumpen-Audit.",
+        "data": {
+          "country": "Land",
+          "update_interval_hours": "Abfrageintervall"
+        },
+        "data_description": {
+          "country": "Angeboten werden nur Quellen, die dieses Land abdecken.",
+          "update_interval_hours": "Gilt für alle Quellen. Die Quellen selbst ändern sich wöchentlich bis halbjährlich; einmal täglich reicht."
+        }
+      },
+      "sources": {
+        "title": "Quellen",
+        "data": {
+          "sources": "Quellen",
+          "depi_region": "Pellet-Region (DEPI)"
+        },
+        "data_description": {
+          "sources": "Je Quelle entsteht ein Preis-Sensor. Im Audit erscheinen nur die gewählten.",
+          "depi_region": "Preis bei 6 t Liefermenge, Bundesdurchschnitt oder Region."
+        }
+      }
+    },
+    "error": {
+      "no_sources": "Für dieses Land gibt es keine Quelle."
+    },
+    "abort": {
+      "already_configured": "Die Integration ist bereits eingerichtet."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Land und Intervall",
+        "data": {
+          "country": "Land",
+          "update_interval_hours": "Abfrageintervall"
+        },
+        "data_description": {
+          "country": "Angeboten werden nur Quellen, die dieses Land abdecken.",
+          "update_interval_hours": "Gilt für alle Quellen. Die Quellen selbst ändern sich wöchentlich bis halbjährlich; einmal täglich reicht."
+        }
+      },
+      "sources": {
+        "title": "Quellen",
+        "data": {
+          "sources": "Quellen",
+          "depi_region": "Pellet-Region (DEPI)"
+        },
+        "data_description": {
+          "sources": "Je Quelle entsteht ein Preis-Sensor. Im Audit erscheinen nur die gewählten.",
+          "depi_region": "Preis bei 6 t Liefermenge, Bundesdurchschnitt oder Region."
+        }
+      }
+    },
+    "error": {
+      "no_sources": "Für dieses Land gibt es keine Quelle."
+    }
+  },
+  "config_subentries": {
+    "district_heating_network": {
+      "initiate_flow": {
+        "user": "Fernwärmenetz hinzufügen"
+      },
+      "entry_type": "Fernwärmenetz",
+      "step": {
+        "user": {
+          "title": "Fernwärmenetz: Bundesland",
+          "description": "Liste der Preistransparenzplattform waermepreise.info (AGFW, BDEW, VKU). Preis: Mischpreis Einfamilienhaus, brutto, inkl. Grundpreis.",
+          "data": {
+            "state": "Bundesland"
+          }
+        },
+        "city": {
+          "title": "Fernwärmenetz: Stadt",
+          "description": "Bundesland: {state}",
+          "data": {
+            "city": "Stadt"
+          }
+        },
+        "network": {
+          "title": "Fernwärmenetz: Teilnetz",
+          "description": "Stadt: {city}",
+          "data": {
+            "network_key": "Versorger und Teilnetz"
+          }
+        }
+      },
+      "abort": {
+        "cannot_connect": "Die Liste von waermepreise.info ist gerade nicht abrufbar.",
+        "already_configured": "Dieses Netz ist bereits eingerichtet."
+      }
+    },
+    "custom_price": {
+      "initiate_flow": {
+        "user": "Eigenen Preis hinzufügen"
+      },
+      "entry_type": "Eigener Preis",
+      "step": {
+        "user": {
+          "title": "Eigener Preis",
+          "description": "Ein von Hand eingetragener Vergleichspreis, z. B. ein Angebot oder der Gaspreis aus dem früheren Vertrag. Der Preis wird danach im Eingabefeld des Geräts eingetragen.",
+          "data": {
+            "name": "Name",
+            "heating_system": "Heizsystem"
+          },
+          "data_description": {
+            "name": "z. B. „Heizöl Angebot Händler“"
+          }
+        },
+        "details": {
+          "title": "Einheit und Grundpreis",
+          "data": {
+            "unit": "Einheit",
+            "annual_base_fee": "Grundpreis (optional)"
+          },
+          "data_description": {
+            "unit": "Einheit des eingetragenen Preises.",
+            "annual_base_fee": "Verbrauchsunabhängiger Grundpreis des Vertrags pro Jahr, z. B. Gas-Grundpreis plus Messstellenentgelt. Leer lassen, wenn der Preis keinen hat."
+          }
+        },
+        "reconfigure": {
+          "title": "Einheit und Grundpreis",
+          "data": {
+            "unit": "Einheit",
+            "annual_base_fee": "Grundpreis (optional)"
+          },
+          "data_description": {
+            "unit": "Einheit des eingetragenen Preises.",
+            "annual_base_fee": "Verbrauchsunabhängiger Grundpreis des Vertrags pro Jahr, z. B. Gas-Grundpreis plus Messstellenentgelt. Leer lassen, wenn der Preis keinen hat."
+          }
+        }
+      },
+      "abort": {
+        "reconfigure_successful": "Gespeichert."
+      }
+    }
+  },
+  "selector": {
+    "source": {
+      "options": {
+        "oil_bulletin": "Heizöl – EU Weekly Oil Bulletin (amtlich, wöchentlich)",
+        "eurostat_gas": "Erdgas – Eurostat (amtlich, halbjährlich, inkl. Grundpreis)",
+        "depi_pellets": "Holzpellets – DEPI (Verband, monatlich)",
+        "district_heating_mean": "Fernwärme – Bundesmittel waermepreise.info (Verbände, monatlich)"
+      }
+    },
+    "depi_region": {
+      "options": {
+        "germany": "Deutschland",
+        "north_east": "Nord/Ost",
+        "central": "Mitte",
+        "south": "Süd"
+      }
+    },
+    "heating_system": {
+      "options": {
+        "heating_oil": "Heizöl",
+        "natural_gas": "Erdgas",
+        "wood_pellets": "Holzpellets",
+        "district_heating": "Fernwärme"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "oil_bulletin": {
+        "name": "Heizöl (EU Weekly Oil Bulletin)"
+      },
+      "eurostat_gas": {
+        "name": "Erdgas (Eurostat)"
+      },
+      "depi_pellets": {
+        "name": "Holzpellets (DEPI)"
+      },
+      "district_heating_mean": {
+        "name": "Fernwärme (Bundesmittel waermepreise.info)"
+      }
+    },
+    "number": {
+      "custom_price": {
+        "name": "Preis"
+      }
+    }
+  }
+}

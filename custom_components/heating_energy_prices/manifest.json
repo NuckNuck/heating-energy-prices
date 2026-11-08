@@ -1,0 +1,14 @@
+{
+  "domain": "heating_energy_prices",
+  "name": "Heizenergiepreise",
+  "codeowners": [
+    "@NuckNuck"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/NuckNuck/heating-energy-prices",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/NuckNuck/heating-energy-prices/issues",
+  "requirements": [],
+  "version": "0.1.0b1"
+}
