@@ -1,0 +1,190 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Heating energy prices",
+        "description": "Fuel prices of other heating systems as sensors, e.g. for the cost comparison in the heat pump audit.",
+        "data": {
+          "country": "Country",
+          "update_interval_hours": "Update interval"
+        },
+        "data_description": {
+          "country": "Only sources covering this country are offered.",
+          "update_interval_hours": "Applies to all sources. The sources change weekly to half-yearly; once a day is enough."
+        }
+      },
+      "sources": {
+        "title": "Sources",
+        "data": {
+          "sources": "Sources",
+          "depi_region": "Pellet region (DEPI)"
+        },
+        "data_description": {
+          "sources": "Each source creates one price sensor. Only selected ones appear in the audit.",
+          "depi_region": "Price for a 6 t delivery, national average or region."
+        }
+      }
+    },
+    "error": {
+      "no_sources": "There is no source for this country."
+    },
+    "abort": {
+      "already_configured": "The integration is already set up."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Country and interval",
+        "data": {
+          "country": "Country",
+          "update_interval_hours": "Update interval"
+        },
+        "data_description": {
+          "country": "Only sources covering this country are offered.",
+          "update_interval_hours": "Applies to all sources. The sources change weekly to half-yearly; once a day is enough."
+        }
+      },
+      "sources": {
+        "title": "Sources",
+        "data": {
+          "sources": "Sources",
+          "depi_region": "Pellet region (DEPI)"
+        },
+        "data_description": {
+          "sources": "Each source creates one price sensor. Only selected ones appear in the audit.",
+          "depi_region": "Price for a 6 t delivery, national average or region."
+        }
+      }
+    },
+    "error": {
+      "no_sources": "There is no source for this country."
+    }
+  },
+  "config_subentries": {
+    "district_heating_network": {
+      "initiate_flow": {
+        "user": "Add district heating network"
+      },
+      "entry_type": "District heating network",
+      "step": {
+        "user": {
+          "title": "District heating network: state",
+          "description": "List of the price transparency platform waermepreise.info (AGFW, BDEW, VKU). Price: blended price for a single-family house, gross, incl. standing charge.",
+          "data": {
+            "state": "State"
+          }
+        },
+        "city": {
+          "title": "District heating network: city",
+          "description": "State: {state}",
+          "data": {
+            "city": "City"
+          }
+        },
+        "network": {
+          "title": "District heating network: network",
+          "description": "City: {city}",
+          "data": {
+            "network_key": "Supplier and network"
+          }
+        }
+      },
+      "abort": {
+        "cannot_connect": "The list from waermepreise.info is currently unavailable.",
+        "already_configured": "This network is already set up."
+      }
+    },
+    "custom_price": {
+      "initiate_flow": {
+        "user": "Add own price"
+      },
+      "entry_type": "Own price",
+      "step": {
+        "user": {
+          "title": "Own price",
+          "description": "A manually entered comparison price, e.g. a quote or the gas price of your former contract. Enter the price afterwards in the device's input field.",
+          "data": {
+            "name": "Name",
+            "heating_system": "Heating system"
+          },
+          "data_description": {
+            "name": "e.g. “Heating oil dealer quote”"
+          }
+        },
+        "details": {
+          "title": "Unit and standing charge",
+          "data": {
+            "unit": "Unit",
+            "annual_base_fee": "Standing charge (optional)"
+          },
+          "data_description": {
+            "unit": "Unit of the price you enter.",
+            "annual_base_fee": "Consumption-independent annual standing charge, e.g. gas standing charge plus metering fee. Leave empty if there is none."
+          }
+        },
+        "reconfigure": {
+          "title": "Unit and standing charge",
+          "data": {
+            "unit": "Unit",
+            "annual_base_fee": "Standing charge (optional)"
+          },
+          "data_description": {
+            "unit": "Unit of the price you enter.",
+            "annual_base_fee": "Consumption-independent annual standing charge, e.g. gas standing charge plus metering fee. Leave empty if there is none."
+          }
+        }
+      },
+      "abort": {
+        "reconfigure_successful": "Saved."
+      }
+    }
+  },
+  "selector": {
+    "source": {
+      "options": {
+        "oil_bulletin": "Heating oil – EU Weekly Oil Bulletin (official, weekly)",
+        "eurostat_gas": "Natural gas – Eurostat (official, half-yearly, incl. standing charge)",
+        "depi_pellets": "Wood pellets – DEPI (association, monthly)",
+        "district_heating_mean": "District heating – national mean waermepreise.info (associations, monthly)"
+      }
+    },
+    "depi_region": {
+      "options": {
+        "germany": "Germany",
+        "north_east": "North/East",
+        "central": "Central",
+        "south": "South"
+      }
+    },
+    "heating_system": {
+      "options": {
+        "heating_oil": "Heating oil",
+        "natural_gas": "Natural gas",
+        "wood_pellets": "Wood pellets",
+        "district_heating": "District heating"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "oil_bulletin": {
+        "name": "Heating oil (EU Weekly Oil Bulletin)"
+      },
+      "eurostat_gas": {
+        "name": "Natural gas (Eurostat)"
+      },
+      "depi_pellets": {
+        "name": "Wood pellets (DEPI)"
+      },
+      "district_heating_mean": {
+        "name": "District heating (national mean waermepreise.info)"
+      }
+    },
+    "number": {
+      "custom_price": {
+        "name": "Price"
+      }
+    }
+  }
+}
