@@ -33,7 +33,8 @@ Jede Installation ruft die Daten selbst für den privaten Gebrauch ab.
 ## Installation
 
 1. HACS → Integrationen → Menü → Benutzerdefinierte Repositories → `https://github.com/NuckNuck/heating-energy-prices`,
-   Kategorie Integration.
+   Kategorie Integration. Ab Home Assistant 2026.11 ersetzt der eingebaute Marketplace HACS; dort das Repository
+   genauso als benutzerdefiniertes Repository (Typ Integration) hinzufügen.
 2. „Heizenergiepreise“ installieren und Home Assistant neu starten.
 3. Einstellungen → Geräte & Dienste → Integration hinzufügen → „Heizenergiepreise“.
 
