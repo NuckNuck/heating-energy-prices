@@ -3,7 +3,7 @@
 Alle nennenswerten Änderungen an dieser Integration. Format nach [Keep a Changelog](https://keepachangelog.com/de/1.1.0/),
 Versionen nach [Semantic Versioning](https://semver.org/lang/de/).
 
-## [0.1.0] – unveröffentlicht
+## [0.1.0] – 2026-11-09
 
 Erste Version (Issue #1).
 
