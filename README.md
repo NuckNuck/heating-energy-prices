@@ -1,5 +1,7 @@
 # Heizenergiepreise für Home Assistant
 
+<img src="https://raw.githubusercontent.com/NuckNuck/heating-energy-prices/main/custom_components/heating_energy_prices/brand/icon.png" alt="" width="96" align="right">
+
 Diese Integration stellt Brennstoffpreise anderer Heizsysteme als Sensoren bereit: Heizöl, Erdgas, Holzpellets und
 Fernwärme. Sie ist für Wärmekosten-Vergleiche gedacht, zum Beispiel im
 [Luft-Wasser-Wärmepumpen-Audit](https://github.com/NuckNuck/air-water-heatpump-audit). Das Audit erkennt die
@@ -110,6 +112,8 @@ Eingabe.
 - `coordinator.py`: ein `DataUpdateCoordinator` je Quelle. Für Fernwärme gibt es einen gemeinsamen Coordinator, der
   die jüngste Tabelle aus dem Download-Archiv lädt, denn die Dateinamen lassen sich nicht vorhersagen.
 - `sensor.py`, `number.py`, `config_flow.py`: Entitäten, Einrichtung, Optionen und Untereinträge.
+- `brand/`: Icon für Home Assistant ab 2026.3 (`icon.png` 256 px, `icon@2x.png` 512 px), erzeugt aus
+  `docs/brand/icon.svg`.
 
 ### Tests
 

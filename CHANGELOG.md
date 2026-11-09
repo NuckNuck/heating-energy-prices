@@ -9,6 +9,7 @@ Erste Version (Issue #1).
 
 ### Neu
 
+- Icon für „Geräte & Dienste“ und den Marketplace (Ordner `brand/`, #3); Vorlage `docs/brand/icon.svg`.
 - Preis-Sensoren nach dem Vertrag des Luft-Wasser-Wärmepumpen-Audits (Spezifikation 7.3): Attribut
   `heating_system`, dazu `source`, `source_kind`, `as_of` und `includes_fixed_charges`.
 - Quellen, je Quelle ein Sensor:

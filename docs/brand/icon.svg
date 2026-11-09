@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <!-- Preisschild mit Loch, darauf eine Flamme und ein Eurozeichen -->
+  <path d="M30 70 Q30 46 54 46 L150 46 Q162 46 171 55 L232 116 Q244 128 232 140 L170 202 Q158 214 146 202 L39 95 Q30 86 30 70Z"
+        fill="#fff3e0" stroke="#5d4037" stroke-width="10" stroke-linejoin="round"/>
+  <circle cx="68" cy="82" r="13" fill="#ffffff" stroke="#5d4037" stroke-width="8"/>
+  <path d="M128 182 C 96 182, 84 154, 98 128 C 104 140, 112 144, 116 142 C 108 116, 122 92, 146 80
+           C 142 104, 158 112, 162 132 C 166 128, 168 120, 168 112 C 182 132, 178 182, 128 182Z"
+        fill="#ef6c00" stroke="#bf360c" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M132 176 C 116 176, 108 162, 116 148 C 120 154, 126 156, 128 154 C 126 140, 134 130, 144 124
+           C 144 138, 152 144, 152 156 C 152 168, 144 176, 132 176Z" fill="#ffca28"/>
+  <g fill="none" stroke="#1565c0" stroke-width="13" stroke-linecap="round">
+    <path d="M232 188 A 34 34 0 1 0 232 236"/>
+  </g>
+  <g stroke="#1565c0" stroke-width="10" stroke-linecap="round">
+    <line x1="176" y1="202" x2="212" y2="202"/><line x1="176" y1="222" x2="212" y2="222"/>
+  </g>
+</svg>
